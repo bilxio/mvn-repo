@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>zbatis-root</artifactId>
+        <groupId>zd.mybatis</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>zbatis-spring-boot</artifactId>
+    <packaging>pom</packaging>
+    <description>Spring Boot Support for ZBatis</description>
+
+    <modules>
+        <module>zbatis-spring-boot-starter</module>
+        <module>zbatis-spring-boot-autoconfigure</module>
+        <module>zbatis-spring-boot-samples</module>
+    </modules>
+
+    <properties>
+        <mybatis.version>3.5.0</mybatis.version>
+        <mybatis-spring.version>2.0.0</mybatis-spring.version>
+
+        <!--  from mybatis-autoconfigure -->
+        <!--<spring-boot.version>2.0.8.RELEASE</spring-boot.version>-->
+        <spring-boot.version>2.1.3.RELEASE</spring-boot.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>zd.mybatis</groupId>
+                <artifactId>zbatis-spring-boot-autoconfigure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>zd.mybatis</groupId>
+                <artifactId>zbatis-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <!--<dependency>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-autoconfigure</artifactId>-->
+            <!--</dependency>-->
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
